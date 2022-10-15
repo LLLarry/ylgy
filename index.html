@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>羊了个羊</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin:  0;
+			box-sizing: border-box;
+		}
+		.app {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
+		#ylgy {
+			border: 1px solid #ccc;
+			margin-top:  20px;
+			position: relative;
+
+		}
+		.cover::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,.4);
+		}
+
+		#reload {
+			padding: 6px 12px;
+			background-color: #3366ff;
+			color: #fff;
+			border: none;
+			cursor: pointer	;
+			margin-top: 5px;
+			border-radius: 3px;
+
+		}
+		#reload:active {
+			background-color: #3333ff;
+		}
+	</style>
+</head>
+<body>
+	<div class="app">
+		<h1 class="">🐏了个🐏</h1>
+		<div id="ylgy">
+			
+		</div>
+		<button id="reload">刷新</button>
+	</div>
+	<script type="module" type="module">
+		import Ylgy from './index.js'
+		const ylgy = new Ylgy({
+			el: document.querySelector('#ylgy'),
+			width: 350,
+			height: 350
+		})
+
+		document.querySelector('#reload').addEventListener('click', () => {
+			ylgy.initItems()
+		})
+		console.log(ylgy)
+	</script>
+</body>
+</html>
